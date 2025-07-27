@@ -63,7 +63,7 @@ migrate()
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    return jsonify(status="healthy"), 200
+    return jsonify(status="Woohoo..! My server is healthy"), 200
 @app.route('/live')
 def liveness():
     return "OK", 200
