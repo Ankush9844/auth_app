@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo "Logging to ECR"
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 600748199510.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 600748199510.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=600748199510.dkr.ecr.us-east-1.amazonaws.com/dev/chatapp
       - BUILD_TAG=build-$CODEBUILD_BUILD_NUMBER
   
